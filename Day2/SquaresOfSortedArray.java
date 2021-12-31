@@ -1,7 +1,7 @@
 package Day2;
 
 import java.util.Arrays;
-
+//Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
 public class SquaresOfSortedArray {
     public int[] sortedSquares(int[] nums) {
         
