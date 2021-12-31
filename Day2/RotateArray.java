@@ -1,5 +1,5 @@
 package Day2;
-
+//Given an array, rotate the array to the right by k steps, where k is non-negative.
 public class RotateArray {
     public void rotate(int[] nums, int k) {
         int n = nums.length;
