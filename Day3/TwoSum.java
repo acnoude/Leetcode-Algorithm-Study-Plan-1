@@ -23,4 +23,20 @@ public class TwoSum {
         }
         return result;
     }
+
+    public static String reverseWord(String str)
+    {
+        // Reverse the string str
+        int i=0,j=str.length()-1;
+        char[] charArray= str.toCharArray();
+        while(i<j){
+            char temp = charArray[i];
+            charArray[i]=charArray[j];
+            charArray[j]=temp;
+            j--;
+            i++;
+        }
+
+        return charArray.toString();
+    }
 }
