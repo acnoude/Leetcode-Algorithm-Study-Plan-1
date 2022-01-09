@@ -37,27 +37,34 @@ class Node {
 
 public class PopulateNextPtr {
     public Node connect(Node root) {
-
+       
         if(root ==null){
             return null;
         }
-        Queue<Node> q = new LinkedList<>();
-        q.add(root);
-
-        while(!q.isEmpty()){
-            Node temp = q.poll();
-
-            if(temp.left!=null){
-                temp.left.next = temp.right;
-                q.add(temp.left);
-            }
-
-            if(temp.right!=null){
-                temp.right.next = temp.right;
-                q.add(temp.right);
-            }
-
-        }
-        return root;
-    }
+         Queue<Node> q = new LinkedList<>();
+         q.add(root);
+         Node temp =null;
+         while(!q.isEmpty()){
+             int n = q.size();
+             for(int i=0;i<n;i++){
+                 Node prev = temp;
+                 temp = q.poll();
+ 
+                 if(i>0){
+                     prev.next = temp;
+                 }
+ 
+                 if(temp.left!=null){
+                     q.add(temp.left);
+                 }
+ 
+                 if(temp.right!=null){
+                     q.add(temp.right);
+                 }
+             }
+             temp.next = null;
+ 
+         }
+         return root;
+     }
 }
